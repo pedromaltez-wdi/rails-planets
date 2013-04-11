@@ -226,3 +226,8 @@ Connecting to database specified by database.yml
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (1.2ms)[0m  INSERT INTO "moons" ("created_at", "name", "planet_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00], ["name", "Da Moon"], ["planet_id", 43], ["updated_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00]]
   [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-04-11 16:34:03 +0100
+Served asset /rails.png - 304 Not Modified (3ms)
