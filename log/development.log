@@ -5,3 +5,224 @@ Connecting to database specified by database.yml
   [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-04-11 13:49:57 +0100
+Served asset /rails.png - 200 OK (7ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePlanets (20130411124422)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (10.1ms)[0m  [1mCREATE TABLE "planets" ("id" serial primary key, "name" character varying(255), "image" text, "orbit" float, "mass" float, "diameter" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130411124422')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMoons (20130411124724)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "moons" ("id" serial primary key, "name" character varying(255), "planet_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.7ms)[0m  CREATE INDEX "index_moons_on_planet_id" ON "moons" ("planet_id")
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130411124724')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "planets"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "moons"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (8.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:04:45 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mercury"], ["orbit", 0.5], ["updated_at", Thu, 11 Apr 2013 13:04:45 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:04:46 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Venus"], ["orbit", 0.7], ["updated_at", Thu, 11 Apr 2013 13:04:46 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:04:46 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Earth"], ["orbit", 1.0], ["updated_at", Thu, 11 Apr 2013 13:04:46 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:04:46 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mars"], ["orbit", 1.5], ["updated_at", Thu, 11 Apr 2013 13:04:46 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:04:46 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Jupiter"], ["orbit", 3.7], ["updated_at", Thu, 11 Apr 2013 13:04:46 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:04:46 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Saturn"], ["orbit", 5.2], ["updated_at", Thu, 11 Apr 2013 13:04:46 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:04:46 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Neptune"], ["orbit", 8.6], ["updated_at", Thu, 11 Apr 2013 13:04:46 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM "planets"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "moons"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (7.0ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mercury"], ["orbit", 0.5], ["updated_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Venus"], ["orbit", 0.7], ["updated_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Earth"], ["orbit", 1.0], ["updated_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mars"], ["orbit", 1.5], ["updated_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Jupiter"], ["orbit", 3.7], ["updated_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Saturn"], ["orbit", 5.2], ["updated_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Neptune"], ["orbit", 8.6], ["updated_at", Thu, 11 Apr 2013 13:05:52 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "planets"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "moons"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (6.6ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mercury"], ["orbit", 0.5], ["updated_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Venus"], ["orbit", 0.7], ["updated_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Earth"], ["orbit", 1.0], ["updated_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mars"], ["orbit", 1.5], ["updated_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Jupiter"], ["orbit", 3.7], ["updated_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Saturn"], ["orbit", 5.2], ["updated_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Neptune"], ["orbit", 8.6], ["updated_at", Thu, 11 Apr 2013 13:06:57 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePlanets (20130411124422)
+Migrating to CreateMoons (20130411124724)
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (5.1ms)[0m  DELETE FROM "planets"
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "moons"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (6.7ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mercury"], ["orbit", 0.5], ["updated_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Venus"], ["orbit", 0.7], ["updated_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Earth"], ["orbit", 1.0], ["updated_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mars"], ["orbit", 1.5], ["updated_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Jupiter"], ["orbit", 3.7], ["updated_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Saturn"], ["orbit", 5.2], ["updated_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Neptune"], ["orbit", 8.6], ["updated_at", Thu, 11 Apr 2013 13:08:00 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (4.8ms)[0m  DELETE FROM "planets"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "moons"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (6.6ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mercury"], ["orbit", 0.5], ["updated_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Venus"], ["orbit", 0.7], ["updated_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Earth"], ["orbit", 1.0], ["updated_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mars"], ["orbit", 1.5], ["updated_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Jupiter"], ["orbit", 3.7], ["updated_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Saturn"], ["orbit", 5.2], ["updated_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Neptune"], ["orbit", 8.6], ["updated_at", Thu, 11 Apr 2013 13:09:03 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePlanets (20130411124422)
+Migrating to CreateMoons (20130411124724)
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePlanets (20130411124422)
+Migrating to CreateMoons (20130411124724)
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePlanets (20130411124422)
+Migrating to CreateMoons (20130411124724)
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (4.7ms)[0m  DELETE FROM "planets"
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "moons"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (6.8ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mercury"], ["orbit", 0.5], ["updated_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Venus"], ["orbit", 0.7], ["updated_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Earth"], ["orbit", 1.0], ["updated_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mars"], ["orbit", 1.5], ["updated_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Jupiter"], ["orbit", 3.7], ["updated_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Saturn"], ["orbit", 5.2], ["updated_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Neptune"], ["orbit", 8.6], ["updated_at", Thu, 11 Apr 2013 13:11:51 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreatePlanets (20130411124422)
+Migrating to CreateMoons (20130411124724)
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mSQL (5.0ms)[0m  DELETE FROM "planets"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "moons"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Earth"], ["orbit", 1.0], ["updated_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mercury"], ["orbit", 0.5], ["updated_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Venus"], ["orbit", 0.7], ["updated_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Mars"], ["orbit", 1.5], ["updated_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Jupiter"], ["orbit", 3.7], ["updated_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Saturn"], ["orbit", 5.2], ["updated_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "planets" ("created_at", "diameter", "image", "mass", "name", "orbit", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00], ["diameter", nil], ["image", nil], ["mass", nil], ["name", "Neptune"], ["orbit", 8.6], ["updated_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "moons" ("created_at", "name", "planet_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00], ["name", "Da Moon"], ["planet_id", 43], ["updated_at", Thu, 11 Apr 2013 13:14:05 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
